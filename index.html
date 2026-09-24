@@ -1,76 +1,17 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>TYZA DIMAOND STORE | Gaming Top Up</title>
-  <meta name="description" content="Premium Free Fire and Blood Strike gaming top-up store.">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TYZA DIAMOND STORE | Gaming Top Up</title>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
-<div class="ambient ambient-a"></div><div class="ambient ambient-b"></div>
-<header class="site-header">
-  <a class="brand" href="#" aria-label="TYZA DIMAOND STORE home">
-    <img src="{{ url_for('static', filename='assets/logo.webp') }}" alt="TYZA DIMAOND STORE logo">
-    <span>TYZA <b>DIMAOND</b> STORE</span>
-  </a>
-  <div class="header-actions">
-    <a class="phone" href="tel:0701014203">0701014203</a>
-    <a class="whatsapp mini" href="https://wa.me/94701014203" target="_blank" rel="noopener">WhatsApp ↗</a>
-  </div>
-</header>
-
-<main class="container">
-  <section id="game-selection" class="hero-section">
-    <div class="eyebrow"><span></span> INSTANT DIGITAL DELIVERY</div>
-    <h1>Choose your <em>battlefield.</em></h1>
-    <p class="hero-copy">Premium gaming top-ups with a fast, clean and secure ordering experience.</p>
-    <div class="game-grid">
-      <button class="game-card" data-game="free_fire">
-        <img src="{{ url_for('static', filename='assets/freefire_art.webp') }}" alt="Free Fire">
-        <div class="game-overlay"></div><div class="game-info"><span class="tag">BATTLE ROYALE</span><h2>FREE FIRE</h2><span class="enter">EXPLORE PACKAGES <b>→</b></span></div>
-      </button>
-      <button class="game-card" data-game="blood_strike">
-        <img src="{{ url_for('static', filename='assets/bloodstrike_art.png') }}" alt="Blood Strike">
-        <div class="game-overlay"></div><div class="game-info"><span class="tag">TACTICAL FPS</span><h2>BLOOD STRIKE</h2><span class="enter">EXPLORE PACKAGES <b>→</b></span></div>
-      </button>
-    </div>
-  </section>
-
-  <section id="store-section" class="hidden">
-    <div class="section-heading">
-      <div><div class="eyebrow"><span></span> SELECT YOUR TOP-UP</div><h2 id="store-title">FREE FIRE PACKAGES</h2></div>
-      <button id="change-game" class="ghost-btn">↶ CHANGE GAME</button>
-    </div>
-    <div id="package-grid" class="package-grid"></div>
-  </section>
-
-  <section id="order-section" class="hidden order-layout">
-    <div class="section-heading"><div><div class="eyebrow"><span></span> SECURE ORDER</div><h2>Complete your order</h2></div><button id="back-packages" class="ghost-btn">← PACKAGES</button></div>
-    <div class="order-card">
-      <div class="selected-product" id="selected-product"></div>
-      <form id="order-form">
-        <div class="field-grid">
-          <label>Player UID / ID<input id="uid" required placeholder="Enter player UID"></label>
-          <button type="button" id="lookup-btn" class="outline-btn">CHECK PLAYER</button>
-        </div>
-        <div id="lookup-result" class="lookup-result">Player name will appear here after verification.</div>
-        <div class="field-grid">
-          <label>Customer name<input id="customer" required placeholder="Your full name"></label>
-          <label>WhatsApp / Contact number<input id="contact" required placeholder="07XXXXXXXX"></label>
-        </div>
-        <div class="quantity-row"><span>Quantity</span><div class="quantity"><button type="button" id="minus">−</button><strong id="qty">1</strong><button type="button" id="plus">+</button></div></div>
-        <div class="summary" id="summary"></div>
-        <button class="whatsapp-order" type="submit">SEND ORDER TO WHATSAPP <span>↗</span></button>
-        <p class="small-note">Orders are sent directly to TYZA DIMAOND STORE via WhatsApp for confirmation.</p>
-      </form>
-    </div>
-  </section>
-</main>
-
-<footer><strong>TYZA DIMAOND STORE</strong><span>FF • BLOOD STRIKE • GAMING TOP UP</span><a href="tel:0701014203">0701014203</a></footer>
-<script>window.PACKAGES = {{ packages|tojson }};</script>
-<script src="{{ url_for('static', filename='script.js') }}"></script>
+<header class="navbar"><a class="brand" href="#home"><span>TYZA</span> DIAMOND STORE</a><nav><a href="#home">Home</a><a href="#games">Games</a><a href="#how">How It Works</a><a href="#contact">Contact</a></nav><a class="nav-btn" href="#games">Top Up Now</a><button class="menu" aria-label="Menu">☰</button></header>
+<main>
+<section id="home" class="hero"><div class="hero-copy"><div class="eyebrow">⚡ FAST • SECURE • RELIABLE</div><h1>Power Up Your <span>Gaming</span></h1><p>Instantly recharge your favorite games with TYZA DIAMOND STORE. Premium service, simple ordering, and trusted support.</p><div class="hero-actions"><a class="btn primary" href="#games">Explore Games <span>↗</span></a><a class="btn ghost" href="#how">How It Works</a></div><div class="trust"><span>✓ Fast Delivery</span><span>✓ Friendly Support</span><span>✓ Easy Checkout</span></div></div><div class="hero-art"><img class="hero-logo" src="tyza-logo.png" alt="TYZA Diamond Store logo"><div class="floating-card card-one">💎<b>Diamonds</b><small>Ready to top up</small></div><div class="floating-card card-two">⚡<b>Fast Service</b><small>Simple & reliable</small></div></div></section>
+<section id="games" class="section"><div class="section-head"><div><div class="eyebrow">CHOOSE YOUR GAME</div><h2>Top Up Your Favorite Games</h2></div><p>Pick a game, select a package, and place your order in minutes.</p></div><div class="game-grid"><article class="game-card freefire"><div class="game-art"><img src="freefire-art.webp" alt="Free Fire" class="game-image"><span class="game-badge">POPULAR</span></div><div class="game-info"><div><h3>Free Fire</h3><p>Diamonds top up</p></div><a class="btn small" href="freefire.html">View Packages ↗</a></div></article><article class="game-card blood"><div class="game-art"><img src="bloodstrike-art.webp" alt="Blood Strike" class="game-image"><span class="game-badge">ACTION</span></div><div class="game-info"><div><h3>Blood Strike</h3><p>Gold & currency</p></div><a class="btn small" href="bloodstrike.html">View Packages ↗</a></div></article></div></section>
+<section id="how" class="section muted"><div class="section-head centered"><div><div class="eyebrow">SIMPLE PROCESS</div><h2>How It Works</h2></div></div><div class="steps"><div><b>01</b><h3>Choose a game</h3><p>Select Free Fire or Blood Strike.</p></div><div><b>02</b><h3>Select a package</h3><p>Choose the currency amount you need.</p></div><div><b>03</b><h3>Send your order</h3><p>Complete the form and contact us on WhatsApp.</p></div></div></section>
+<section id="contact" class="section contact"><div><div class="eyebrow">NEED HELP?</div><h2>We're Here For You</h2><p>Have a question about an order? Contact TYZA DIAMOND STORE and our support team will help you.</p></div><a class="btn primary" href="https://wa.me/94701014203" target="_blank">Chat on WhatsApp ↗</a></section>
+</main><footer><div class="brand"><span>TYZA</span> DIAMOND STORE</div><p>© 2026 TYZA DIAMOND STORE. All rights reserved.</p></footer>
+<script src="script.js"></script>
 </body></html>

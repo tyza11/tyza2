@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Free Fire Top Up | TYZA DIAMOND STORE</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="navbar"><a class="brand" href="index.html"><span>TYZA</span> DIAMOND STORE</a><a class="nav-btn" href="index.html">← Home</a></header>
+<main class="section">
+  <img class="page-game-logo" src="freefire-art.webp" alt="Free Fire">
+  <div class="eyebrow">FREE FIRE</div><h1>Free Fire Top Up</h1>
+  <p class="section-head">Choose your membership or diamond package and order instantly through WhatsApp.</p>
+  <h2 class="package-heading">Top Selling Memberships</h2>
+  <div class="game-grid" id="memberships"></div>
+  <h2 class="package-heading">Diamond Packages</h2>
+  <div class="game-grid" id="packages"></div>
+</main>
+<script src="checkout.js"></script>
+<script>
+const membershipPackages = [
+  {name:'Weekly Lite', price:130, image:'weekly-lite-card.webp'},
+  {name:'Weekly', price:580, image:'weekly-card.webp'},
+  {name:'Monthly', price:2890, image:'monthly-card.webp'}
+];
+const diamondPackages = [
+  {name:'Diamond × 25', price:100, image:'diamond-package.webp'},
+  {name:'Diamond × 100', price:350, image:'diamond-package.webp'},
+  {name:'Diamond × 310', price:1050, image:'diamond-package.webp'},
+  {name:'Diamond × 520', price:1750, image:'diamond-package.webp'},
+  {name:'Diamond × 1060', price:3400, image:'diamond-package.webp'},
+  {name:'Diamond × 2180', price:6800, image:'diamond-package.webp'},
+  {name:'Diamond × 5600', price:16800, image:'diamond-package.webp'},
+  {name:'Diamond × 11500', price:34000, image:'diamond-package.webp'}
+];
+renderPackages('Free Fire', membershipPackages, {target:'memberships'});
+renderPackages('Free Fire', diamondPackages);
+// Render memberships in their own section.
+document.getElementById('memberships').innerHTML = membershipPackages.map(pkg => `
+<article class="game-card package-card"><div class="game-art package-art"><img src="${pkg.image}" alt="${pkg.name}" class="package-image"></div><div class="game-info"><div><h3>${pkg.name}</h3><p class="package-price">Rs. <strong>${pkg.price.toLocaleString()}</strong></p></div><button class="btn small" onclick="checkout('Free Fire','${pkg.name}',${pkg.price})">Order Now ↗</button></div></article>`).join('');
+</script>
+</body></html>
