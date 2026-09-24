@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>TYZA DIMAOND STORE | Gaming Top Up</title>
+  <meta name="description" content="Premium Free Fire and Blood Strike gaming top-up store.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<div class="ambient ambient-a"></div><div class="ambient ambient-b"></div>
+<header class="site-header">
+  <a class="brand" href="#" aria-label="TYZA DIMAOND STORE home">
+    <img src="{{ url_for('static', filename='assets/logo.webp') }}" alt="TYZA DIMAOND STORE logo">
+    <span>TYZA <b>DIMAOND</b> STORE</span>
+  </a>
+  <div class="header-actions">
+    <a class="phone" href="tel:0701014203">0701014203</a>
+    <a class="whatsapp mini" href="https://wa.me/94701014203" target="_blank" rel="noopener">WhatsApp ↗</a>
+  </div>
+</header>
+
+<main class="container">
+  <section id="game-selection" class="hero-section">
+    <div class="eyebrow"><span></span> INSTANT DIGITAL DELIVERY</div>
+    <h1>Choose your <em>battlefield.</em></h1>
+    <p class="hero-copy">Premium gaming top-ups with a fast, clean and secure ordering experience.</p>
+    <div class="game-grid">
+      <button class="game-card" data-game="free_fire">
+        <img src="{{ url_for('static', filename='assets/freefire_art.webp') }}" alt="Free Fire">
+        <div class="game-overlay"></div><div class="game-info"><span class="tag">BATTLE ROYALE</span><h2>FREE FIRE</h2><span class="enter">EXPLORE PACKAGES <b>→</b></span></div>
+      </button>
+      <button class="game-card" data-game="blood_strike">
+        <img src="{{ url_for('static', filename='assets/bloodstrike_art.png') }}" alt="Blood Strike">
+        <div class="game-overlay"></div><div class="game-info"><span class="tag">TACTICAL FPS</span><h2>BLOOD STRIKE</h2><span class="enter">EXPLORE PACKAGES <b>→</b></span></div>
+      </button>
+    </div>
+  </section>
+
+  <section id="store-section" class="hidden">
+    <div class="section-heading">
+      <div><div class="eyebrow"><span></span> SELECT YOUR TOP-UP</div><h2 id="store-title">FREE FIRE PACKAGES</h2></div>
+      <button id="change-game" class="ghost-btn">↶ CHANGE GAME</button>
+    </div>
+    <div id="package-grid" class="package-grid"></div>
+  </section>
+
+  <section id="order-section" class="hidden order-layout">
+    <div class="section-heading"><div><div class="eyebrow"><span></span> SECURE ORDER</div><h2>Complete your order</h2></div><button id="back-packages" class="ghost-btn">← PACKAGES</button></div>
+    <div class="order-card">
+      <div class="selected-product" id="selected-product"></div>
+      <form id="order-form">
+        <div class="field-grid">
+          <label>Player UID / ID<input id="uid" required placeholder="Enter player UID"></label>
+          <button type="button" id="lookup-btn" class="outline-btn">CHECK PLAYER</button>
+        </div>
+        <div id="lookup-result" class="lookup-result">Player name will appear here after verification.</div>
+        <div class="field-grid">
+          <label>Customer name<input id="customer" required placeholder="Your full name"></label>
+          <label>WhatsApp / Contact number<input id="contact" required placeholder="07XXXXXXXX"></label>
+        </div>
+        <div class="quantity-row"><span>Quantity</span><div class="quantity"><button type="button" id="minus">−</button><strong id="qty">1</strong><button type="button" id="plus">+</button></div></div>
+        <div class="summary" id="summary"></div>
+        <button class="whatsapp-order" type="submit">SEND ORDER TO WHATSAPP <span>↗</span></button>
+        <p class="small-note">Orders are sent directly to TYZA DIMAOND STORE via WhatsApp for confirmation.</p>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer><strong>TYZA DIMAOND STORE</strong><span>FF • BLOOD STRIKE • GAMING TOP UP</span><a href="tel:0701014203">0701014203</a></footer>
+<script>window.PACKAGES = {{ packages|tojson }};</script>
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+</body></html>
